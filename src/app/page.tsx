@@ -107,11 +107,11 @@ export default function HomePage() {
           {/* شريط الجهة المشرفة */}
           <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl border border-line bg-white px-6 py-5 sm:flex-row">
             <div className="flex items-center gap-4">
-              <Crest size={52} />
+              <Crest size={58} />
             </div>
             <div className="hidden h-10 w-px bg-line sm:block" />
             <div className="flex items-center gap-4">
-              <BrandLogo slot="programme" size={44} />
+              <BrandLogo slot="programme" size={46} hideWhenMissing />
               <div className="leading-tight">
                 <div className="text-[14px] font-bold text-navy-900">منظومة الفجيرة للوعي والتمكين المالي</div>
                 <div className="text-[11px] font-semibold uppercase tracking-[.12em] text-gold-600">
@@ -123,7 +123,7 @@ export default function HomePage() {
             <div className="text-center text-[12px] font-semibold leading-relaxed text-ink-faint sm:text-left">
               مبادرة على مستوى إمارة الفجيرة
               <br />
-              نموذج عرض تفاعلي — <Num value={2026} />
+              نموذج عرض تفاعلي — <span dir="ltr" className="ltr-num">2026</span>
             </div>
           </div>
         </div>

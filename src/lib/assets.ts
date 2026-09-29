@@ -19,6 +19,8 @@ export type ImageSlot = {
   base: string;
   /** الصورة المؤقتة المرفقة مع المشروع */
   placeholder: string;
+  /** صور رسمية بديلة تُجرَّب قبل الصورة المؤقتة */
+  fallbacks?: string[];
   alt: string;
   /** نسبة العرض إلى الارتفاع الموصى بها عند رفع الصورة الرسمية */
   recommended: string;
@@ -26,9 +28,10 @@ export type ImageSlot = {
 
 const EXT = ["jpg", "png", "webp"] as const;
 
-/** ترتيب المصادر: الصور الرسمية أولاً ثم الصورة المؤقتة */
+/** ترتيب المصادر: الصورة الرسمية، ثم بدائل رسمية، ثم الصورة المؤقتة */
 export const sourcesFor = (slot: ImageSlot): string[] => [
   ...EXT.map((e) => `${slot.dir}/${slot.base}.${e}`),
+  ...(slot.fallbacks ?? []).flatMap((f) => EXT.map((e) => `${f}.${e}`)),
   slot.placeholder,
 ];
 
@@ -65,6 +68,7 @@ export const IMAGE_SLOTS = {
     label: "صورة بيئة التعلّم المدرسية",
     dir: "/assets/images/students",
     base: "classroom",
+    fallbacks: ["/assets/images/students/students-school"],
     placeholder: "/assets/images/students/students-school.svg",
     alt: "بيئة تعلّم مدرسية",
     recommended: "1200×900 بكسل",
@@ -83,6 +87,7 @@ export const IMAGE_SLOTS = {
     label: "صورة جلسة استشارة مالية",
     dir: "/assets/images/beneficiaries",
     base: "advisor-session",
+    fallbacks: ["/assets/images/beneficiaries/training-workshop"],
     placeholder: "/assets/images/beneficiaries/training-workshop.svg",
     alt: "جلسة استشارة مع مستشار مالي",
     recommended: "1200×900 بكسل",

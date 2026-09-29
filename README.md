@@ -68,8 +68,8 @@ src/data/
 
 ```
 public/assets/
-├── logos/              fujairah-government-logo.svg  ← شعار حكومة الفجيرة
-│                       programme-logo.svg            ← شعار المنظومة
+├── logos/              fujairah-government-logo.png  ← شعار حكومة الفجيرة (مُثبَّت ✓)
+│                       programme-logo.svg            ← شعار المنظومة (اختياري)
 ├── images/fujairah/    hero-main.jpg                 ← صورة الواجهة
 ├── images/students/    students-school.jpg  classroom.jpg
 └── images/beneficiaries/ adults-city.jpg  training-workshop.jpg  advisor-session.jpg
@@ -77,13 +77,15 @@ public/assets/
 
 التفاصيل والمقاسات الموصى بها في `public/assets/README.md`.
 
-> الصور الحالية مؤقتة بصيغة `.svg` وتحمل وسم «صورة مؤقتة» يختفي تلقائياً
-> عند رفع الصورة الرسمية. لم يُنشأ أي شعار وهمي أو مقلَّد.
+> شعار حكومة الفجيرة الرسمي مُثبَّت ويظهر في الترويسة وشريط الجهة المشرفة والتذييل.
+>
+> الصور مولّدة بالذكاء الاصطناعي وروابط تنزيلها في `public/assets/GENERATED-IMAGES.md`.
+> الصور المؤقتة `.svg` تبقى كبديل تلقائي وتحمل وسم «صورة مؤقتة» يختفي فور رفع الصورة.
 
 ## ما يحتاجه المشروع من ملفات أصلية
 
-- شعار حكومة الفجيرة وشعار البرنامج بصيغة SVG أو PNG شفافة
-- صور فوتوغرافية عالية الدقة: مشاهد الفجيرة، طلبة، مستفيدون، ورش تدريبية
+- تثبيت الصور المولّدة الخمس (الروابط في `public/assets/GENERATED-IMAGES.md`)
+- شعار المنظومة إن وُجد (اختياري)
 - اعتماد نصوص المحتوى النهائية من فريق البرنامج
 
 ## الربط مع الموقع القائم

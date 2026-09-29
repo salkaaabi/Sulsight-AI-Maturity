@@ -11,10 +11,13 @@ export default function BrandLogo({
   slot = "government",
   size = 44,
   className = "",
+  hideWhenMissing = false,
 }: {
   slot?: LogoSlotKey;
   size?: number;
   className?: string;
+  /** يخفي الموضع تماماً بدل عرض إطار بديل إذا لم يُرفع الشعار بعد */
+  hideWhenMissing?: boolean;
 }) {
   const meta = LOGO_SLOTS[slot];
   const sources = logoSourcesFor(meta);
@@ -29,6 +32,7 @@ export default function BrandLogo({
   }, [index, advance]);
 
   if (index >= sources.length) {
+    if (hideWhenMissing) return null;
     return (
       <div
         className={`grid shrink-0 place-items-center rounded-xl border border-dashed border-navy-200 bg-navy-50/60 ${className}`}
