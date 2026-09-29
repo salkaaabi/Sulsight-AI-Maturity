@@ -45,7 +45,8 @@ const config: Config = {
         emerald2: "#0F7B5A",
       },
       fontFamily: {
-        sans: ["var(--font-arabic)", "Tajawal", "system-ui", "sans-serif"],
+        sans: ['"IBM Plex Sans Arabic"', "Tajawal", "system-ui", "sans-serif"],
+        display: ['"IBM Plex Sans Arabic"', "Tajawal", "system-ui", "sans-serif"],
       },
       borderRadius: {
         xl2: "1.25rem",

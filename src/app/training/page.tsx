@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   ArrowLeft,
+  Building2,
   CalendarDays,
   CheckCircle2,
   Clock,
@@ -34,7 +35,7 @@ export default function TrainingPage() {
     <>
       <PageHeader
         eyebrow="التدريب المباشر"
-        title="البرامج التدريبية الحضورية"
+        title="تعلّم مباشر وورش حضورية"
         description="التعلم الرقمي يبني الأساس، والبرامج الحضورية تحوّله إلى تطبيق. لكل برنامج شروط التحاق مرتبطة بالنقاط والشارات، فلا يُمنح المقعد بالتسجيل وحده."
         breadcrumbs={[{ href: "/training", label: "البرامج التدريبية" }]}
         action={
@@ -84,6 +85,7 @@ export default function TrainingPage() {
                       <MapPin className="h-3.5 w-3.5" />
                       {p.city}
                     </Tag>
+                    <Tag tone="bg-emerald-50 text-emerald-700">{p.format}</Tag>
                     <Tag tone="bg-sand-100 text-ink-soft">
                       <Clock className="h-3.5 w-3.5" />
                       {p.duration}
@@ -102,9 +104,13 @@ export default function TrainingPage() {
                       <CalendarDays className="h-4 w-4 text-navy-600" />
                       {arDate(p.date)} · بعد <Num value={daysUntil(p.date)} /> يوماً
                     </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-navy-600" />
-                      {p.venue}
+                    <div className="flex items-start gap-2">
+                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-navy-600" />
+                      <span>{p.venue}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Building2 className="mt-0.5 h-4 w-4 shrink-0 text-navy-600" />
+                      <span>الجهة المستضيفة: {p.host}</span>
                     </div>
                   </div>
 

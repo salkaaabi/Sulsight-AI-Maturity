@@ -4,7 +4,8 @@ import { ArrowLeft, CheckCircle2, Clock, MapPin, Users } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import Icon from "@/components/Icon";
 import ModuleList from "@/components/ModuleList";
-import { DemoNote, ImageFrame, Num, Pct, Tag } from "@/components/ui";
+import SmartImage from "@/components/SmartImage";
+import { DemoNote, Num, Pct, Tag } from "@/components/ui";
 import { ALL_PATHS, PATH_TONES, pathById } from "@/data/paths";
 import { BADGES } from "@/data/badges";
 import { TRAINING_PROGRAMS } from "@/data/training";
@@ -106,11 +107,9 @@ export default async function PathPage({ params }: { params: Promise<{ id: strin
               </div>
             </div>
 
-            <ImageFrame
-              label={path.kind === "school" ? "بيئة تعلّم مدرسية" : "جلسة تدريب للبالغين"}
-              caption="صورة رسمية مطلوبة"
-              ratio="aspect-[4/3]"
-              variant={path.kind === "school" ? "people" : "city"}
+            <SmartImage
+              slot={path.kind === "school" ? "classroom" : "workshop"}
+              className="aspect-[4/3] rounded-2xl border border-line"
             />
 
             <div className="card p-6">

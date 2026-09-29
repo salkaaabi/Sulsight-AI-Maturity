@@ -24,6 +24,7 @@ const PRIMARY = [
 
 const RESOURCES = [
   { href: "/training", label: "البرامج التدريبية المباشرة", note: "الفجيرة، دبي، أبوظبي" },
+  { href: "/advisor", label: "استشارة مع مستشار مالي", note: "حضورياً أو عن بُعد" },
   { href: "/assessment", label: "قياس المستوى المالي", note: "تقييم تفاعلي من 100" },
   { href: "/schools", label: "المدارس المشاركة", note: "لوحات أداء المدارس" },
   { href: "/rewards", label: "المكافآت والنقاط", note: "خمسة مستويات للمكافآت" },

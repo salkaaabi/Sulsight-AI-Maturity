@@ -2,19 +2,24 @@ import Link from "next/link";
 import {
   ArrowLeft,
   BadgeCheck,
+  CalendarCheck,
   ClipboardList,
+  Clock,
   Gauge,
   GraduationCap,
+  MapPin,
   Medal,
   PlayCircle,
   Users,
   Wrench,
 } from "lucide-react";
-import HeroScene from "@/components/HeroScene";
+import SmartImage from "@/components/SmartImage";
+import QuickBookingButton from "@/components/QuickBookingButton";
 import Icon from "@/components/Icon";
-import { CardLink, DemoNote, Frac, ImageFrame, Num, Pct, Progress, SectionHead, Tag } from "@/components/ui";
+import BrandLogo from "@/components/BrandLogo";
+import { Crest, DemoNote, Frac, Num, Pct, Progress, SectionHead, Tag } from "@/components/ui";
 import { ADULT_PATHS, PATH_TONES, SCHOOL_PATHS } from "@/data/paths";
-import { BADGES } from "@/data/badges";
+import { BADGES, badgeById } from "@/data/badges";
 import { PERSONAS } from "@/data/users";
 import { TRAINING_PROGRAMS } from "@/data/training";
 import { EXEC_KPIS } from "@/data/executive";
@@ -46,8 +51,15 @@ export default function HomePage() {
         <div className="shell pt-8">
           <div className="relative overflow-hidden rounded-3xl border border-line bg-white shadow-card">
             <div className="absolute inset-0">
-              <HeroScene className="h-full w-full" />
-              <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/35 to-white/5 lg:hidden" />
+              <SmartImage
+                slot="heroMain"
+                className="h-full w-full"
+                imgClassName="object-[50%_72%]"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/25 to-white/85" />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/20 to-transparent lg:hidden" />
             </div>
             <div className="relative grid gap-8 px-6 py-16 sm:px-10 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:py-28">
               <div className="max-w-xl animate-fadeUp">
@@ -91,6 +103,29 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+
+          {/* شريط الجهة المشرفة */}
+          <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl border border-line bg-white px-6 py-5 sm:flex-row">
+            <div className="flex items-center gap-4">
+              <Crest size={52} />
+            </div>
+            <div className="hidden h-10 w-px bg-line sm:block" />
+            <div className="flex items-center gap-4">
+              <BrandLogo slot="programme" size={44} />
+              <div className="leading-tight">
+                <div className="text-[14px] font-bold text-navy-900">منظومة الفجيرة للوعي والتمكين المالي</div>
+                <div className="text-[11px] font-semibold uppercase tracking-[.12em] text-gold-600">
+                  Fujairah Financial Literacy &amp; Empowerment Platform
+                </div>
+              </div>
+            </div>
+            <div className="hidden h-10 w-px bg-line sm:block" />
+            <div className="text-center text-[12px] font-semibold leading-relaxed text-ink-faint sm:text-left">
+              مبادرة على مستوى إمارة الفجيرة
+              <br />
+              نموذج عرض تفاعلي — <Num value={2026} />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -125,11 +160,9 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="px-6">
-                <ImageFrame
-                  label="طلبة مدارس الفجيرة"
-                  caption="صورة رسمية مطلوبة"
-                  ratio="aspect-[16/7]"
-                  variant="people"
+                <SmartImage
+                  slot="stageSchool"
+                  className="aspect-[16/7] rounded-2xl border border-line"
                 />
               </div>
               <div className="grid grid-cols-2 gap-3 p-6 sm:grid-cols-4">
@@ -169,11 +202,9 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="px-6">
-                <ImageFrame
-                  label="شباب ومواطنو الفجيرة"
-                  caption="صورة رسمية مطلوبة"
-                  ratio="aspect-[16/7]"
-                  variant="city"
+                <SmartImage
+                  slot="stageAdult"
+                  className="aspect-[16/7] rounded-2xl border border-line"
                 />
               </div>
               <div className="grid grid-cols-2 gap-3 p-6 sm:grid-cols-3">
@@ -390,13 +421,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ───────────────────── التدريب المباشر ───────────────────── */}
+      {/* ───────────────── تعلّم مباشر وورش حضورية ───────────────── */}
       <section className="section">
         <div className="shell">
           <SectionHead
             eyebrow="التدريب المباشر"
-            title="البرامج القادمة"
-            description="يتحول التعلم الرقمي إلى تطبيق عبر برامج حضورية في الفجيرة ودبي وأبوظبي، بشروط التحاق مرتبطة بالإنجاز."
+            title="تعلّم مباشر وورش حضورية"
+            description="جلسات تُعقد في مواقع محددة داخل الفجيرة وخارجها، ينتقل فيها المستفيد من المحتوى الرقمي إلى التطبيق. لكل برنامج جهة مستضيفة وتاريخ ومقاعد محدودة وشروط التحاق."
             action={
               <Link href="/training" className="btn-secondary">
                 جميع البرامج
@@ -406,21 +437,111 @@ export default function HomePage() {
           />
           <div className="grid gap-5 lg:grid-cols-3">
             {upcoming.map((p) => (
-              <CardLink key={p.id} href="/training">
-                <div className="flex items-center justify-between gap-3">
-                  <Tag tone="bg-navy-50 text-navy-700">{p.city}</Tag>
-                  <span className="text-[12px] font-bold text-ink-faint">{p.duration}</span>
+              <article key={p.id} className="card flex flex-col p-6">
+                <div className="flex flex-wrap items-center gap-2">
+                  <Tag tone="bg-navy-50 text-navy-700">
+                    <MapPin className="h-3.5 w-3.5" />
+                    {p.city}
+                  </Tag>
+                  <Tag tone="bg-emerald-50 text-emerald-700">{p.format}</Tag>
+                  <Tag tone="bg-sand-100 text-ink-soft">
+                    <Clock className="h-3.5 w-3.5" />
+                    {p.duration}
+                  </Tag>
                 </div>
-                <div className="mt-4 text-[17px] font-extrabold leading-snug text-navy-900">{p.name}</div>
-                <p className="body mt-2.5 line-clamp-2">{p.summary}</p>
-                <div className="mt-5 flex items-center justify-between border-t border-line pt-4 text-[12.5px] font-bold">
-                  <span className="text-ink-faint">{arDate(p.date)}</span>
-                  <span className="text-gold-600">
-                    <Num value={p.seatsLeft} /> مقعد متبقٍّ
+
+                <h3 className="mt-4 text-[18px] font-bold leading-snug text-navy-900">{p.name}</h3>
+                <p className="body mt-2.5 flex-1">{p.summary}</p>
+
+                <dl className="mt-5 grid gap-2 rounded-xl bg-sand-50 p-4 text-[12.5px]">
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 font-bold text-ink-faint">المكان:</dt>
+                    <dd className="font-semibold text-ink-soft">{p.venue}</dd>
+                  </div>
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 font-bold text-ink-faint">الجهة المستضيفة:</dt>
+                    <dd className="font-semibold text-ink-soft">{p.host}</dd>
+                  </div>
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 font-bold text-ink-faint">التاريخ:</dt>
+                    <dd className="font-semibold text-ink-soft">{arDate(p.date)}</dd>
+                  </div>
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 font-bold text-ink-faint">الفئة:</dt>
+                    <dd className="font-semibold text-ink-soft">{p.audience}</dd>
+                  </div>
+                </dl>
+
+                <div className="mt-4 rounded-xl border border-gold-100 bg-gold-50/60 p-3.5">
+                  <div className="text-[11.5px] font-bold text-gold-700">شروط الالتحاق</div>
+                  <p className="mt-1 text-[12.5px] font-semibold leading-relaxed text-gold-800">
+                    {p.conditions[0]}
+                    {p.requiredBadges.length > 0 && (
+                      <>
+                        {" — "}
+                        {p.requiredBadges.map((b) => `شارة ${badgeById(b)?.name}`).join(" و")}
+                      </>
+                    )}
+                  </p>
+                </div>
+
+                <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
+                  <span className="text-[12.5px] font-bold text-gold-600">
+                    <Num value={p.seatsLeft} /> مقعد متبقٍّ من <Num value={p.seatsTotal} />
                   </span>
+                  <Link
+                    href="/training"
+                    className="flex items-center gap-1.5 text-[13px] font-bold text-navy-700 transition-transform hover:-translate-x-1"
+                  >
+                    التفاصيل
+                    <ArrowLeft className="h-4 w-4" />
+                  </Link>
                 </div>
-              </CardLink>
+              </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───────────────── استشارة مستشار مالي ───────────────── */}
+      <section id="advisor" className="section bg-white">
+        <div className="shell">
+          <div className="overflow-hidden rounded-3xl border border-line bg-sand-50">
+            <div className="grid lg:grid-cols-[1.15fr_1fr]">
+              <div className="p-8 sm:p-11">
+                <div className="eyebrow mb-3">استشارة فردية</div>
+                <h2 className="h2">احجز موعداً مع مستشار مالي</h2>
+                <p className="lede mt-5">
+                  جلسة فردية مع مستشار معتمد تحوّل نتيجة تقييمك إلى خطة مكتوبة بأرقام وتواريخ.
+                  متاحة حضورياً في الفجيرة ودبي وأبوظبي، أو عن بُعد عبر المنصة.
+                </p>
+
+                <div className="mt-7 grid gap-2.5 sm:grid-cols-2">
+                  {[
+                    { icon: <Clock className="h-4 w-4" />, text: "من 30 إلى 60 دقيقة" },
+                    { icon: <MapPin className="h-4 w-4" />, text: "الفجيرة · دبي · أبوظبي" },
+                    { icon: <CalendarCheck className="h-4 w-4" />, text: "مواعيد خلال 14 يوماً" },
+                    { icon: <BadgeCheck className="h-4 w-4" />, text: "مجانية لمستفيدي المنظومة" },
+                  ].map((i) => (
+                    <div key={i.text} className="flex items-center gap-2.5 rounded-xl border border-line bg-white px-4 py-3">
+                      <span className="text-navy-600">{i.icon}</span>
+                      <span className="text-[13.5px] font-bold text-ink-soft">{i.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <QuickBookingButton />
+                  <Link href="/advisor" className="btn-secondary">
+                    تفاصيل الخدمة
+                  </Link>
+                </div>
+              </div>
+
+              <div className="relative min-h-[280px] border-t border-line lg:border-r lg:border-t-0">
+                <SmartImage slot="advisor" className="absolute inset-0 h-full w-full" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -9,6 +9,7 @@ const COLUMNS = [
       { href: "/paths", label: "المسارات التعليمية" },
       { href: "/assessment", label: "قياس المستوى المالي" },
       { href: "/training", label: "البرامج التدريبية المباشرة" },
+      { href: "/advisor", label: "استشارة مع مستشار مالي" },
       { href: "/rewards", label: "المكافآت والنقاط" },
     ],
   },
