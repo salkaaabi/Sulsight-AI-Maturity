@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   ArrowLeft,
+  Building2,
   CalendarDays,
   CheckCircle2,
   Clock,
@@ -13,6 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
+import ProgramAction from "@/components/ProgramAction";
 import { DemoNote, Num, Progress, Tag } from "@/components/ui";
 import { TRAINING_PROGRAMS } from "@/data/training";
 import { badgeById } from "@/data/badges";
@@ -34,7 +36,7 @@ export default function TrainingPage() {
     <>
       <PageHeader
         eyebrow="التدريب المباشر"
-        title="البرامج التدريبية الحضورية"
+        title="تعلّم مباشر وورش حضورية"
         description="التعلم الرقمي يبني الأساس، والبرامج الحضورية تحوّله إلى تطبيق. لكل برنامج شروط التحاق مرتبطة بالنقاط والشارات، فلا يُمنح المقعد بالتسجيل وحده."
         breadcrumbs={[{ href: "/training", label: "البرامج التدريبية" }]}
         action={
@@ -84,6 +86,7 @@ export default function TrainingPage() {
                       <MapPin className="h-3.5 w-3.5" />
                       {p.city}
                     </Tag>
+                    <Tag tone="bg-emerald-50 text-emerald-700">{p.format}</Tag>
                     <Tag tone="bg-sand-100 text-ink-soft">
                       <Clock className="h-3.5 w-3.5" />
                       {p.duration}
@@ -102,9 +105,13 @@ export default function TrainingPage() {
                       <CalendarDays className="h-4 w-4 text-navy-600" />
                       {arDate(p.date)} · بعد <Num value={daysUntil(p.date)} /> يوماً
                     </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-navy-600" />
-                      {p.venue}
+                    <div className="flex items-start gap-2">
+                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-navy-600" />
+                      <span>{p.venue}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Building2 className="mt-0.5 h-4 w-4 shrink-0 text-navy-600" />
+                      <span>الجهة المستضيفة: {p.host}</span>
                     </div>
                   </div>
 
@@ -158,41 +165,7 @@ export default function TrainingPage() {
                   </div>
 
                   <div className="mt-6">
-                    {!persona ? (
-                      <Link href="/demo" className="btn-secondary w-full !py-3 text-[14px]">
-                        اختر شخصية لعرض الأهلية
-                      </Link>
-                    ) : e.eligible ? (
-                      <div className="rounded-xl border border-emerald-200 bg-emerald-50/70 p-4">
-                        <div className="flex items-center gap-2 text-[13.5px] font-extrabold text-emerald-800">
-                          <CheckCircle2 className="h-4.5 w-4.5" strokeWidth={2.2} />
-                          {persona.name.split(" ")[0]} مؤهل للالتحاق بهذا البرنامج
-                        </div>
-                        <button type="button" className="btn-primary mt-3 w-full !py-2.5 text-[13.5px]">
-                          تأكيد الحجز
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-4">
-                        <div className="flex items-center gap-2 text-[13.5px] font-extrabold text-amber-800">
-                          <Lock className="h-4.5 w-4.5" strokeWidth={2.2} />
-                          غير مؤهل حالياً — ما ينقص {persona.name.split(" ")[0]}
-                        </div>
-                        <ul className="mt-2 grid gap-1 text-[12.5px] font-semibold text-amber-800">
-                          {e.missingPoints > 0 && (
-                            <li>
-                              • <Num value={e.missingPoints} /> نقطة إضافية
-                            </li>
-                          )}
-                          {e.missingBadges.map((b) => (
-                            <li key={b}>• شارة {b}</li>
-                          ))}
-                        </ul>
-                        <Link href={`/path/${persona.pathId}`} className="btn-secondary mt-3 w-full !py-2.5 text-[13.5px]">
-                          أكمل مسارك للتأهل
-                        </Link>
-                      </div>
-                    )}
+                    <ProgramAction program={p} persona={persona} eligibility={e} />
                   </div>
                 </article>
               );

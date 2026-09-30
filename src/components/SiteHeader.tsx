@@ -24,6 +24,7 @@ const PRIMARY = [
 
 const RESOURCES = [
   { href: "/training", label: "البرامج التدريبية المباشرة", note: "الفجيرة، دبي، أبوظبي" },
+  { href: "/advisor", label: "استشارة مع مستشار مالي", note: "حضورياً أو عن بُعد" },
   { href: "/assessment", label: "قياس المستوى المالي", note: "تقييم تفاعلي من 100" },
   { href: "/schools", label: "المدارس المشاركة", note: "لوحات أداء المدارس" },
   { href: "/rewards", label: "المكافآت والنقاط", note: "خمسة مستويات للمكافآت" },
@@ -72,7 +73,7 @@ export default function SiteHeader() {
         >
           <div className="flex items-center justify-between gap-4 px-4 py-3 sm:px-5">
             <Link href="/" className="flex items-center gap-4">
-              <Crest compact />
+              <Crest compact size={48} />
               <span className="hidden h-9 w-px bg-line sm:block" />
               <span className="hidden leading-tight sm:block">
                 <span className="block text-[14.5px] font-extrabold text-navy-900">

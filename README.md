@@ -25,7 +25,7 @@ npm run build && npm run start
 - Next.js 15 (App Router) + React 19 + TypeScript
 - Tailwind CSS 3 — نظام تصميم مخصص (كحلي / ذهبي / أبيض رملي)
 - lucide-react للأيقونات، Recharts للرسوم البيانية
-- RTL كامل على مستوى الـLayout، خط Tajawal
+- RTL كامل على مستوى الـLayout، خط **IBM Plex Sans Arabic**
 - حالة التجربة محفوظة في `localStorage` فقط
 
 ## الصفحات
@@ -42,6 +42,7 @@ npm run build && npm run start
 | `/path/[id]` | صفحة مسار مع الوحدات التعليمية |
 | `/training` | البرامج التدريبية الحضورية + الأهلية |
 | `/rewards` | المكافآت والنقاط والشارات |
+| `/advisor` | احجز موعداً مع مستشار مالي (واجهة حجز كاملة + نافذة حجز سريع) |
 | `/impact` | قياس الأثر (قبل / بعد) |
 | `/executive` | لوحة المؤشرات التنفيذية |
 
@@ -59,10 +60,32 @@ src/data/
   executive.ts    مؤشرات ولوحات المستوى التنفيذي
 ```
 
+## الأصول البصرية (الشعارات والصور)
+
+جميع مواضع الصور والشعارات معرّفة في ملف واحد: `src/lib/assets.ts`،
+والملفات في `public/assets/`. لاستبدال أي صورة أو شعار **ضع الملف بالاسم المحدد
+في مجلده — دون أي تعديل في الكود**.
+
+```
+public/assets/
+├── logos/              fujairah-government-logo.png  ← شعار حكومة الفجيرة (مُثبَّت ✓)
+│                       programme-logo.svg            ← شعار المنظومة (اختياري)
+├── images/fujairah/    hero-main.jpg                 ← صورة الواجهة
+├── images/students/    students-school.jpg  classroom.jpg
+└── images/beneficiaries/ adults-city.jpg  training-workshop.jpg  advisor-session.jpg
+```
+
+التفاصيل والمقاسات الموصى بها في `public/assets/README.md`.
+
+> شعار حكومة الفجيرة الرسمي مُثبَّت ويظهر في الترويسة وشريط الجهة المشرفة والتذييل.
+>
+> الصور مولّدة بالذكاء الاصطناعي وروابط تنزيلها في `public/assets/GENERATED-IMAGES.md`.
+> الصور المؤقتة `.svg` تبقى كبديل تلقائي وتحمل وسم «صورة مؤقتة» يختفي فور رفع الصورة.
+
 ## ما يحتاجه المشروع من ملفات أصلية
 
-- شعار حكومة الفجيرة وشعار البرنامج بصيغة SVG أو PNG شفافة
-- صور فوتوغرافية عالية الدقة: مشاهد الفجيرة، طلبة، ورش تدريبية
+- تثبيت الصور المولّدة الخمس (الروابط في `public/assets/GENERATED-IMAGES.md`)
+- شعار المنظومة إن وُجد (اختياري)
 - اعتماد نصوص المحتوى النهائية من فريق البرنامج
 
 ## الربط مع الموقع القائم

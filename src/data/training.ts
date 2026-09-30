@@ -3,6 +3,8 @@ export type TrainingProgram = {
   name: string;
   city: "الفجيرة" | "دبي" | "أبوظبي";
   venue: string;
+  host: string;
+  format: "حضوري" | "حضوري ومباشر";
   date: string;
   duration: string;
   audience: string;
@@ -22,6 +24,8 @@ export const TRAINING_PROGRAMS: TrainingProgram[] = [
     name: "مختبر المال الذكي للطلبة",
     city: "الفجيرة",
     venue: "مركز الفجيرة للفنون — القاعة التدريبية",
+    host: "دائرة التعليم — حكومة الفجيرة",
+    format: "حضوري",
     date: "2026-10-14",
     duration: "نصف يوم",
     audience: "الصف 7–9",
@@ -48,6 +52,8 @@ export const TRAINING_PROGRAMS: TrainingProgram[] = [
     name: "المستثمر الصغير",
     city: "أبوظبي",
     venue: "أكاديمية التمكين المالي — أبوظبي",
+    host: "أكاديمية التمكين المالي",
+    format: "حضوري",
     date: "2026-11-05",
     duration: "يوم واحد",
     audience: "الصف 10–12",
@@ -74,6 +80,8 @@ export const TRAINING_PROGRAMS: TrainingProgram[] = [
     name: "مختبر القرارات المالية للشباب",
     city: "دبي",
     venue: "منصة الابتكار المالي — دبي",
+    host: "مركز الابتكار المالي",
+    format: "حضوري ومباشر",
     date: "2026-10-28",
     duration: "يوم واحد",
     audience: "طلبة الجامعات وحديثو التخرج",
@@ -99,6 +107,8 @@ export const TRAINING_PROGRAMS: TrainingProgram[] = [
     name: "التخطيط المالي للأسرة",
     city: "الفجيرة",
     venue: "قاعة المجتمع — مدينة الفجيرة",
+    host: "دائرة التنمية الاجتماعية — الفجيرة",
+    format: "حضوري",
     date: "2026-11-19",
     duration: "يومان",
     audience: "المقبلون على الزواج",
@@ -125,6 +135,8 @@ export const TRAINING_PROGRAMS: TrainingProgram[] = [
     name: "بيت العمر بقرار مالي واعٍ",
     city: "أبوظبي",
     venue: "مركز التخطيط المالي — أبوظبي",
+    host: "مركز التخطيط المالي",
+    format: "حضوري",
     date: "2026-12-03",
     duration: "يوم واحد",
     audience: "المقبلون على البناء أو التملك",
@@ -151,6 +163,8 @@ export const TRAINING_PROGRAMS: TrainingProgram[] = [
     name: "الاستعداد المالي للتقاعد",
     city: "دبي",
     venue: "مركز التدريب المؤسسي — دبي",
+    host: "مركز التدريب المؤسسي",
+    format: "حضوري ومباشر",
     date: "2026-12-16",
     duration: "يوم واحد",
     audience: "الفئة العمرية 50 سنة فأعلى",
@@ -176,6 +190,8 @@ export const TRAINING_PROGRAMS: TrainingProgram[] = [
     name: "راتبي الأول: من الاستلام إلى التخطيط",
     city: "الفجيرة",
     venue: "مبنى التدريب الحكومي — الفجيرة",
+    host: "معهد التدريب الحكومي — الفجيرة",
+    format: "حضوري",
     date: "2026-10-21",
     duration: "نصف يوم",
     audience: "الموظفون الجدد",
@@ -198,6 +214,8 @@ export const TRAINING_PROGRAMS: TrainingProgram[] = [
     name: "ورشة الادخار الأسري",
     city: "الفجيرة",
     venue: "مكتبة الفجيرة العامة",
+    host: "مكتبة الفجيرة العامة",
+    format: "حضوري",
     date: "2026-11-11",
     duration: "نصف يوم",
     audience: "الصف 4–6 وأولياء الأمور",

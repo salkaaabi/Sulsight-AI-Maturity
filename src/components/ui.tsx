@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BrandLogo from "@/components/BrandLogo";
 import type { ReactNode } from "react";
 
 /* ── أرقام بترتيب صحيح داخل نص عربي ───────────────────────────── */
@@ -41,23 +42,15 @@ export function Pct({ value }: { value: number }) {
   );
 }
 
-/* ── شعار بديل (Placeholder) — لا يُحاكي شعاراً رسمياً ────────── */
-export function Crest({ compact = false }: { compact?: boolean }) {
+/* ── قفل الهوية: الشعار الرسمي إن وُجد، وإلا إطار بديل نظيف ──── */
+export function Crest({ compact = false, size = 44 }: { compact?: boolean; size?: number }) {
   return (
     <div className="flex items-center gap-3">
-      <div
-        aria-hidden
-        className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-navy-100 bg-gradient-to-b from-navy-50 to-white"
-      >
-        <svg viewBox="0 0 32 32" className="h-6 w-6 text-navy-700" fill="none">
-          <path d="M16 3.5 27 9.5v13L16 28.5 5 22.5v-13L16 3.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-          <path d="M16 10.5 21 13.5v5L16 21.5 11 18.5v-5L16 10.5Z" fill="currentColor" opacity=".85" />
-        </svg>
-      </div>
+      <BrandLogo slot="government" size={size} />
       {!compact && (
         <div className="leading-tight">
-          <div className="text-[13px] font-extrabold text-navy-900">حكومة الفجيرة</div>
-          <div className="text-[11px] font-semibold text-ink-faint">شعار توضيحي — Placeholder</div>
+          <div className="text-[13.5px] font-bold text-navy-900">حكومة الفجيرة</div>
+          <div className="text-[11px] font-semibold text-ink-faint">Government of Fujairah</div>
         </div>
       )}
     </div>
@@ -256,63 +249,6 @@ export function BarList({
         </li>
       ))}
     </ul>
-  );
-}
-
-/* ── إطار صورة بديل، نظيف ومنظم ───────────────────────────────── */
-const FRAME_ACCENT: Record<string, { from: string; to: string; mark: string }> = {
-  landscape: { from: "#E4EDF5", to: "#F4EFE3", mark: "#9FB4C6" },
-  people: { from: "#EDF1F6", to: "#F6F2E9", mark: "#AFBECE" },
-  city: { from: "#E9EFF5", to: "#F2F4F7", mark: "#A6B7C8" },
-  neutral: { from: "#F1EEE7", to: "#F8F6F1", mark: "#CFC7B6" },
-};
-
-export function ImageFrame({
-  label,
-  caption,
-  className = "",
-  ratio = "aspect-[16/10]",
-  variant = "landscape",
-}: {
-  label: string;
-  caption?: string;
-  className?: string;
-  ratio?: string;
-  variant?: "landscape" | "people" | "city" | "neutral";
-}) {
-  const a = FRAME_ACCENT[variant] ?? FRAME_ACCENT.neutral;
-  return (
-    <div
-      className={`relative overflow-hidden rounded-2xl border border-line ${ratio} ${className}`}
-      style={{ background: `linear-gradient(140deg, ${a.from}, ${a.to})` }}
-    >
-      <svg viewBox="0 0 640 400" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
-        <g stroke={a.mark} strokeOpacity=".22" strokeWidth="1">
-          {Array.from({ length: 16 }).map((_, i) => (
-            <line key={i} x1={-120 + i * 60} y1="400" x2={120 + i * 60} y2="0" />
-          ))}
-        </g>
-      </svg>
-
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 px-6 text-center">
-        <div
-          className="grid h-11 w-11 place-items-center rounded-xl border border-white/70 bg-white/70 backdrop-blur-sm"
-          style={{ color: a.mark }}
-        >
-          <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
-            <rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" strokeWidth="1.7" />
-            <circle cx="9" cy="10" r="1.8" fill="currentColor" />
-            <path d="M4.5 17.5 9 13l3.5 3 3-2.5 4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </div>
-        <div className="text-[13px] font-extrabold text-navy-900/80">{label}</div>
-        {caption && <div className="text-[11.5px] font-semibold text-navy-900/45">{caption}</div>}
-      </div>
-
-      <div className="absolute bottom-3 left-3 rounded-md bg-white/75 px-2 py-1 text-[10.5px] font-bold text-navy-800/80 backdrop-blur-sm">
-        موضع صورة
-      </div>
-    </div>
   );
 }
 
