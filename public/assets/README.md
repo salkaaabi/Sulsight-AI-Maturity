@@ -30,14 +30,18 @@ public/assets/
 3. ضعها في مجلدها بامتداد `.jpg` أو `.png` أو `.webp`.
 4. أعد تحميل الصفحة — ستظهر تلقائياً وتختفي علامة «صورة مؤقتة».
 
-| الموضع | المسار | الاسم | المقاس الموصى به |
+| الموضع | المسار | الاسم | النسبة والمقاس |
 |---|---|---|---|
-| واجهة الصفحة الرئيسية | `images/fujairah/` | `hero-main` | 2400×1350 أفقية عريضة |
-| بطاقة المرحلة الأولى | `images/students/` | `students-school` | 1600×700 أفقية |
-| بطاقة المرحلة الثانية | `images/beneficiaries/` | `adults-city` | 1600×700 أفقية |
-| صفحات المسارات المدرسية | `images/students/` | `classroom` | 1200×900 |
-| البرامج التدريبية | `images/beneficiaries/` | `training-workshop` | 1200×900 |
-| الاستشارة المالية | `images/beneficiaries/` | `advisor-session` | 1200×900 |
+| واجهة الصفحة الرئيسية | `images/fujairah/` | `hero-main` | 16:9 — 2560×1440 |
+| بطاقة المرحلة الأولى | `images/students/` | `students-school` | 21:9 — 2100×900 |
+| بطاقة المرحلة الثانية | `images/beneficiaries/` | `adults-city` | 21:9 — 2100×900 |
+| صفحات المسارات المدرسية | `images/students/` | `classroom` | 4:3 — 1600×1200 |
+| مسارات المرحلة الثانية | `images/beneficiaries/` | `training-workshop` | 4:3 — 1600×1200 |
+| صفحة الاستشارة | `images/beneficiaries/` | `advisor-session` | 4:3 — 1600×1200 |
+| الاستشارة بالرئيسية | `images/beneficiaries/` | `advisor-home` | 1:1 — 1400×1400 |
+
+> **مهم:** النسب أعلاه مقيسة فعلياً من الصفحة. التفاصيل الكاملة وقواعد التكوين
+> و`object-position` لكل موضع في `public/assets/IMAGE-BRIEF.md`.
 
 ## كيف أستبدل الشعار؟
 

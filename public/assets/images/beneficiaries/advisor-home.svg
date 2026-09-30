@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1400" width="1400" height="1400" role="img" aria-label="جلسة استشارة مالية — إطار مربع بتقريب نصفي">
+  <defs>
+    <linearGradient id="qw" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F9F6EF"/><stop offset="100%" stop-color="#E7E0D1"/></linearGradient>
+    <linearGradient id="qtb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E7DBC4"/><stop offset="100%" stop-color="#C6B492"/></linearGradient>
+    <radialGradient id="qg" cx="50%" cy="4%" r="84%"><stop offset="0%" stop-color="#FFFAF0" stop-opacity=".95"/><stop offset="100%" stop-color="#FFFAF0" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1400" height="1400" fill="url(#qw)"/>
+  <rect width="1400" height="1400" fill="url(#qg)"/>
+
+  <rect x="60" y="80" width="330" height="470" rx="14" fill="#E4EEF6" opacity=".9"/>
+  <rect x="60" y="80" width="330" height="470" rx="14" fill="none" stroke="#D8CFBD" stroke-width="8"/>
+  <g stroke="#EFE8DA" stroke-width="16" opacity=".75"><path d="M106 80 v470 M160 80 v470"/></g>
+
+  <rect x="930" y="96" width="420" height="300" rx="14" fill="#12324F"/>
+  <g fill="#fff" opacity=".2"><rect x="972" y="142" width="170" height="16" rx="8"/><rect x="972" y="176" width="110" height="12" rx="6"/></g>
+  <g fill="#E8C878" opacity=".5">
+    <rect x="972" y="242" width="50" height="104" rx="7"/><rect x="1040" y="274" width="50" height="72" rx="7"/>
+    <rect x="1108" y="220" width="50" height="126" rx="7"/><rect x="1176" y="256" width="50" height="90" rx="7"/>
+  </g>
+  <path d="M972 330 L1046 282 L1128 300 L1204 240" stroke="#E8C878" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+
+  <!-- الطاولة: شريط رفيع أسفل الإطار -->
+  <rect x="0" y="1210" width="1400" height="48" fill="url(#qtb)"/>
+  <rect x="0" y="1258" width="1400" height="142" fill="#BCAE92"/>
+
+  <!-- الشخصان أكبر، داخل النصف الأوسط أفقياً -->
+  <g transform="translate(920,1210)">
+    <path d="M-206 0 C-206 -396 -128 -556 0 -556 C128 -556 206 -396 206 0 Z" fill="#F4F2EC" stroke="#DBD3C2" stroke-width="7"/>
+    <circle cx="0" cy="-656" r="130" fill="#EAE5D9" stroke="#D8D0BE" stroke-width="7"/>
+    <path d="M-134 -658 a134 134 0 0 1 268 0 v76 q-134 34 -268 0 z" fill="#DBD4C4"/>
+    <path d="M-178 -286 q-186 42 -262 140" stroke="#EDEAE1" stroke-width="72" stroke-linecap="round" fill="none"/>
+  </g>
+  <g transform="translate(450,1218)">
+    <path d="M-200 0 C-200 -380 -124 -534 0 -534 C124 -534 200 -380 200 0 Z" fill="#26456A"/>
+    <circle cx="0" cy="-632" r="128" fill="#33557C"/>
+    <path d="M-132 -634 a132 132 0 0 1 264 0 v106 q-132 42 -264 0 z" fill="#1E3A5B"/>
+  </g>
+
+  <g>
+    <rect x="576" y="1146" width="248" height="60" rx="8" fill="#fff" opacity=".96"/>
+    <rect x="602" y="1164" width="150" height="9" rx="4.5" fill="#C9D3DC"/>
+    <rect x="602" y="1183" width="104" height="9" rx="4.5" fill="#DDE3E9"/>
+    <g transform="translate(180,1134)"><rect width="188" height="72" rx="11" fill="#5C6B7A"/><rect x="12" y="12" width="164" height="48" rx="6" fill="#9FC2DE"/></g>
+  </g>
+</svg>

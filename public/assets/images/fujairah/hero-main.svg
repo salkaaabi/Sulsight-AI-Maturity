@@ -1,74 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="ساحل الفجيرة وجبال الحجر — صورة مؤقتة">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440" role="img" aria-label="ساحل الفجيرة وجبال الحجر — إطار 16:9 مع ثلث أيمن هادئ للنص">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#9EC2E4"/><stop offset="32%" stop-color="#C9DEEF"/>
-      <stop offset="62%" stop-color="#EDE2CD"/><stop offset="100%" stop-color="#F8ECD9"/>
+    <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A7C8E6"/><stop offset="34%" stop-color="#CCE0EF"/>
+      <stop offset="64%" stop-color="#EDE3D0"/><stop offset="100%" stop-color="#F8EDDB"/>
     </linearGradient>
-    <radialGradient id="glow" cx="76%" cy="22%" r="36%">
-      <stop offset="0%" stop-color="#FFF6E2" stop-opacity=".95"/>
-      <stop offset="55%" stop-color="#FDE9C6" stop-opacity=".4"/>
-      <stop offset="100%" stop-color="#FDE9C6" stop-opacity="0"/>
+    <radialGradient id="hsun" cx="82%" cy="20%" r="34%">
+      <stop offset="0%" stop-color="#FFF8E8" stop-opacity=".95"/>
+      <stop offset="58%" stop-color="#FDEBCC" stop-opacity=".38"/>
+      <stop offset="100%" stop-color="#FDEBCC" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="mFar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ADBDCD"/><stop offset="100%" stop-color="#90A3B8"/></linearGradient>
-    <linearGradient id="mMid" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8597AB"/><stop offset="100%" stop-color="#637A90"/></linearGradient>
-    <linearGradient id="mNear" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6C7F93"/><stop offset="100%" stop-color="#465A6F"/></linearGradient>
-    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#82B3CD"/><stop offset="45%" stop-color="#5E94B5"/><stop offset="100%" stop-color="#3E7095"/></linearGradient>
-    <linearGradient id="rock" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0%" stop-color="#9C8E79"/><stop offset="100%" stop-color="#655A4B"/></linearGradient>
-    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DCCBAB"/><stop offset="100%" stop-color="#B9A183"/></linearGradient>
-    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EADCC2"/><stop offset="100%" stop-color="#D6C3A3"/></linearGradient>
-    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff" stop-opacity=".5"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="hm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#AFC0D0"/><stop offset="100%" stop-color="#93A6BA"/></linearGradient>
+    <linearGradient id="hm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8799AD"/><stop offset="100%" stop-color="#657C92"/></linearGradient>
+    <linearGradient id="hm3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6D8094"/><stop offset="100%" stop-color="#475B70"/></linearGradient>
+    <linearGradient id="hsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#85B6CF"/><stop offset="48%" stop-color="#6098B8"/><stop offset="100%" stop-color="#417398"/></linearGradient>
+    <linearGradient id="hrock" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0%" stop-color="#9E9079"/><stop offset="100%" stop-color="#655A4B"/></linearGradient>
+    <linearGradient id="hwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DECDAD"/><stop offset="100%" stop-color="#B9A183"/></linearGradient>
+    <linearGradient id="hhaze" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff" stop-opacity=".52"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="hcalm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="52%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity=".42"/>
+    </linearGradient>
   </defs>
 
-  <rect width="1600" height="900" fill="url(#sky)"/>
-  <rect width="1600" height="900" fill="url(#glow)"/>
-  <circle cx="1216" cy="208" r="52" fill="#FFF7E8" opacity=".92"/>
+  <rect width="2560" height="1440" fill="url(#hsky)"/>
+  <rect width="2560" height="1440" fill="url(#hsun)"/>
+  <circle cx="2100" cy="288" r="86" fill="#FFF9EC" opacity=".9"/>
 
-  <path d="M0 470 L104 378 L182 432 L268 330 L352 404 L436 348 L528 424 L614 356 L706 438 L800 372 L892 448 L988 384 L1082 452 L1180 392 L1274 456 L1376 402 L1468 462 L1600 414 L1600 560 L0 560Z" fill="url(#mFar)" opacity=".78"/>
-  <rect y="428" width="1600" height="132" fill="url(#haze)"/>
-  <path d="M0 520 L92 438 L176 498 L264 414 L352 490 L444 436 L540 510 L632 448 L728 520 L826 458 L920 528 L1018 466 L1116 534 L1214 472 L1312 540 L1410 484 L1508 546 L1600 498 L1600 640 L0 640Z" fill="url(#mMid)"/>
-  <path d="M0 586 L118 516 L226 574 L340 506 L452 572 L570 518 L688 582 L806 528 L926 590 L1046 536 L1166 596 L1286 546 L1406 602 L1520 558 L1600 594 L1600 660 L0 660Z" fill="url(#mNear)" opacity=".92"/>
+  <!-- الجبال مركّزة في النصف الأيسر، وتنخفض تدريجياً نحو اليمين -->
+  <path d="M0 700 L150 470 L268 596 L400 396 L540 560 L660 452 L800 604 L930 500 L1060 664 L1190 592 L1320 712 L1460 660 L1600 760 L1760 724 L1920 792 L2120 766 L2320 810 L2560 788 L2560 980 L0 980Z"
+        fill="url(#hm1)" opacity=".8"/>
+  <rect y="600" width="2560" height="400" fill="url(#hhaze)"/>
 
-  <rect y="640" width="1600" height="260" fill="url(#sea)"/>
-  <g stroke="#fff" stroke-opacity=".2" stroke-width="2.6" stroke-linecap="round">
-    <path d="M60 690 h140 M250 712 h96 M420 686 h164 M640 720 h120 M840 694 h150 M1060 716 h128 M1290 692 h150"/>
-    <path d="M120 760 h180 M360 786 h130 M560 754 h190 M820 790 h150 M1060 760 h170 M1330 792 h160"/>
-    <path d="M90 840 h210 M380 866 h160 M620 838 h200 M900 870 h180 M1200 842 h220"/>
+  <path d="M0 830 L140 600 L270 736 L410 540 L556 706 L690 604 L838 748 L980 648 L1120 800 L1260 730 L1400 846 L1560 800 L1720 880 L1900 850 L2100 898 L2320 876 L2560 906 L2560 1080 L0 1080Z"
+        fill="url(#hm2)"/>
+
+  <path d="M0 942 L170 754 L320 886 L480 720 L640 874 L800 790 L960 914 L1120 836 L1280 950 L1450 900 L1620 972 L1820 944 L2040 990 L2300 968 L2560 996 L2560 1120 L0 1120Z"
+        fill="url(#hm3)" opacity=".92"/>
+
+  <!-- البحر -->
+  <rect y="1080" width="2560" height="360" fill="url(#hsea)"/>
+  <g stroke="#FFFFFF" stroke-opacity=".17" stroke-width="4" stroke-linecap="round">
+    <path d="M90 1140 h210 M380 1178 h150 M660 1136 h250 M1000 1186 h180 M1320 1144 h230 M1680 1180 h200 M2040 1142 h240"/>
+    <path d="M180 1258 h280 M560 1300 h200 M880 1250 h290 M1280 1306 h230 M1660 1256 h260 M2060 1300 h300"/>
+    <path d="M140 1382 h320 M600 1414 h240 M980 1378 h300 M1420 1418 h270 M1840 1380 h340"/>
   </g>
-  <g fill="#FFF3DC" opacity=".2">
-    <ellipse cx="1216" cy="700" rx="120" ry="10"/><ellipse cx="1216" cy="742" rx="90" ry="8"/><ellipse cx="1216" cy="786" rx="62" ry="6"/>
+  <g fill="#FFF4DE" opacity=".3">
+    <ellipse cx="2100" cy="1150" rx="190" ry="14"/><ellipse cx="2100" cy="1214" rx="146" ry="11"/>
+    <ellipse cx="2100" cy="1280" rx="104" ry="9"/><ellipse cx="2100" cy="1346" rx="70" ry="7"/>
   </g>
 
-  <path d="M96 690 L196 566 L330 540 L446 592 L506 662 L520 700 Z" fill="url(#rock)"/>
-  <path d="M96 690 L196 566 L268 556 L300 690 Z" fill="#000" opacity=".08"/>
+  <!-- الرأس الصخري والحصن في اليسار -->
+  <path d="M120 1152 L250 930 L470 892 L620 968 L700 1080 L724 1152 Z" fill="url(#hrock)"/>
+  <path d="M120 1152 L250 930 L360 916 L400 1152 Z" fill="#000" opacity=".09"/>
   <g>
-    <rect x="228" y="474" width="168" height="94" rx="4" fill="url(#wall)"/>
-    <rect x="210" y="458" width="40" height="112" rx="4" fill="#CDB794"/>
-    <rect x="376" y="444" width="44" height="126" rx="4" fill="#CDB794"/>
-    <rect x="276" y="428" width="62" height="50" rx="4" fill="#DCCBAB"/>
+    <rect x="300" y="790" width="240" height="140" rx="6" fill="url(#hwall)"/>
+    <rect x="272" y="762" width="58" height="168" rx="6" fill="#CFB995"/>
+    <rect x="516" y="742" width="62" height="188" rx="6" fill="#CFB995"/>
+    <rect x="370" y="716" width="90" height="76" rx="6" fill="#DECDAD"/>
     <g fill="#A8906E">
-      <rect x="232" y="466" width="14" height="12"/><rect x="258" y="466" width="14" height="12"/>
-      <rect x="284" y="466" width="14" height="12"/><rect x="310" y="466" width="14" height="12"/>
-      <rect x="336" y="466" width="14" height="12"/><rect x="362" y="466" width="14" height="12"/>
-      <rect x="212" y="450" width="12" height="10"/><rect x="232" y="450" width="12" height="10"/>
-      <rect x="380" y="436" width="12" height="10"/><rect x="402" y="436" width="12" height="10"/>
-      <rect x="280" y="420" width="12" height="10"/><rect x="302" y="420" width="12" height="10"/><rect x="324" y="420" width="12" height="10"/>
+      <rect x="306" y="778" width="20" height="18"/><rect x="344" y="778" width="20" height="18"/>
+      <rect x="382" y="778" width="20" height="18"/><rect x="420" y="778" width="20" height="18"/>
+      <rect x="458" y="778" width="20" height="18"/><rect x="496" y="778" width="20" height="18"/>
+      <rect x="276" y="750" width="18" height="16"/><rect x="306" y="750" width="18" height="16"/>
+      <rect x="520" y="730" width="18" height="16"/><rect x="552" y="730" width="18" height="16"/>
+      <rect x="376" y="704" width="18" height="16"/><rect x="410" y="704" width="18" height="16"/><rect x="442" y="704" width="18" height="16"/>
     </g>
-    <rect x="296" y="516" width="22" height="52" rx="10" fill="#8B7357" opacity=".55"/>
-    <rect x="226" y="498" width="14" height="22" rx="6" fill="#8B7357" opacity=".4"/>
-    <rect x="386" y="486" width="14" height="22" rx="6" fill="#8B7357" opacity=".4"/>
+    <rect x="398" y="850" width="34" height="80" rx="16" fill="#8B7357" opacity=".55"/>
   </g>
 
-  <g stroke="#6F7C55" stroke-width="7" stroke-linecap="round" fill="none">
-    <path d="M1052 690 q10 -74 4 -122"/><path d="M1128 700 q-6 -66 -2 -106"/>
-    <path d="M1212 686 q12 -80 6 -132"/><path d="M1300 702 q-8 -60 -2 -98"/>
+  <!-- نخيل في الوسط الأيسر -->
+  <g stroke="#6F7C55" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M880 1130 q14 -110 6 -184"/><path d="M986 1146 q-10 -100 -4 -164"/><path d="M1084 1124 q16 -120 8 -198"/>
   </g>
   <g fill="#7E8C5E">
-    <g transform="translate(1056,562)"><ellipse cx="-36" cy="8" rx="42" ry="11" transform="rotate(-16 -36 8)"/><ellipse cx="36" cy="8" rx="42" ry="11" transform="rotate(16 36 8)"/><ellipse cx="-22" cy="-14" rx="36" ry="10" transform="rotate(-44 -22 -14)"/><ellipse cx="22" cy="-14" rx="36" ry="10" transform="rotate(44 22 -14)"/></g>
-    <g transform="translate(1126,588)"><ellipse cx="-30" cy="6" rx="36" ry="9" transform="rotate(-18 -30 6)"/><ellipse cx="30" cy="6" rx="36" ry="9" transform="rotate(18 30 6)"/><ellipse cx="-18" cy="-12" rx="30" ry="8" transform="rotate(-46 -18 -12)"/><ellipse cx="18" cy="-12" rx="30" ry="8" transform="rotate(46 18 -12)"/></g>
-    <g transform="translate(1218,548)"><ellipse cx="-40" cy="8" rx="46" ry="12" transform="rotate(-15 -40 8)"/><ellipse cx="40" cy="8" rx="46" ry="12" transform="rotate(15 40 8)"/><ellipse cx="-24" cy="-16" rx="38" ry="10" transform="rotate(-42 -24 -16)"/><ellipse cx="24" cy="-16" rx="38" ry="10" transform="rotate(42 24 -16)"/></g>
-    <g transform="translate(1304,596)"><ellipse cx="-28" cy="6" rx="34" ry="9" transform="rotate(-18 -28 6)"/><ellipse cx="28" cy="6" rx="34" ry="9" transform="rotate(18 28 6)"/><ellipse cx="-16" cy="-10" rx="28" ry="8" transform="rotate(-46 -16 -10)"/><ellipse cx="16" cy="-10" rx="28" ry="8" transform="rotate(46 16 -10)"/></g>
+    <g transform="translate(886,930)"><ellipse cx="-56" cy="10" rx="66" ry="17" transform="rotate(-16 -56 10)"/><ellipse cx="56" cy="10" rx="66" ry="17" transform="rotate(16 56 10)"/><ellipse cx="-34" cy="-22" rx="56" ry="15" transform="rotate(-44 -34 -22)"/><ellipse cx="34" cy="-22" rx="56" ry="15" transform="rotate(44 34 -22)"/></g>
+    <g transform="translate(982,968)"><ellipse cx="-48" cy="8" rx="58" ry="15" transform="rotate(-18 -48 8)"/><ellipse cx="48" cy="8" rx="58" ry="15" transform="rotate(18 48 8)"/><ellipse cx="-28" cy="-18" rx="48" ry="13" transform="rotate(-46 -28 -18)"/><ellipse cx="28" cy="-18" rx="48" ry="13" transform="rotate(46 28 -18)"/></g>
+    <g transform="translate(1092,912)"><ellipse cx="-60" cy="10" rx="70" ry="18" transform="rotate(-15 -60 10)"/><ellipse cx="60" cy="10" rx="70" ry="18" transform="rotate(15 60 10)"/><ellipse cx="-36" cy="-24" rx="58" ry="16" transform="rotate(-42 -36 -24)"/><ellipse cx="36" cy="-24" rx="58" ry="16" transform="rotate(42 36 -24)"/></g>
   </g>
 
-  <path d="M0 862 Q 240 836 520 858 T 1080 850 T 1600 868 L1600 900 L0 900Z" fill="url(#sand)"/>
-  <path d="M0 872 Q 260 852 540 870 T 1100 864 T 1600 878 L1600 900 L0 900Z" fill="#F0E5CE" opacity=".7"/>
+  <!-- تهدئة الثلث الأيمن لصالح النص -->
+  <rect width="2560" height="1440" fill="url(#hcalm)"/>
 </svg>
