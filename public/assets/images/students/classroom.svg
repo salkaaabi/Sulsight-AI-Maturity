@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="بيئة تعلّم مدرسية — إطار 16:9">
+  <defs>
+    <linearGradient id="kw" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F8F5EE"/><stop offset="100%" stop-color="#E8E2D5"/></linearGradient>
+    <linearGradient id="kwin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#CCE0F0"/><stop offset="100%" stop-color="#EBF2F8"/></linearGradient>
+    <linearGradient id="ktb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E7DBC4"/><stop offset="100%" stop-color="#C8B795"/></linearGradient>
+    <radialGradient id="kg" cx="50%" cy="4%" r="82%"><stop offset="0%" stop-color="#FFFAEE" stop-opacity=".95"/><stop offset="100%" stop-color="#FFFAEE" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#kw)"/>
+  <rect width="1920" height="1080" fill="url(#kg)"/>
+
+  <rect x="60" y="90" width="320" height="440" rx="12" fill="url(#kwin)"/>
+  <rect x="60" y="90" width="320" height="440" rx="12" fill="none" stroke="#D7CEBC" stroke-width="8"/>
+  <path d="M220 90 v440 M60 310 h320" stroke="#D7CEBC" stroke-width="8"/>
+
+  <rect x="1180" y="110" width="660" height="350" rx="14" fill="#12324F"/>
+  <g fill="#fff" opacity=".2"><rect x="1228" y="160" width="230" height="18" rx="9"/><rect x="1228" y="198" width="146" height="14" rx="7"/></g>
+  <g fill="#E8C878" opacity=".55">
+    <rect x="1228" y="266" width="62" height="124" rx="7"/><rect x="1312" y="306" width="62" height="84" rx="7"/>
+    <rect x="1396" y="238" width="62" height="152" rx="7"/><rect x="1480" y="288" width="62" height="102" rx="7"/>
+  </g>
+  <path d="M1228 352 L1316 304 L1408 322 L1496 258" stroke="#E8C878" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+
+  <rect x="0" y="900" width="1920" height="58" fill="url(#ktb)"/>
+  <rect x="0" y="958" width="1920" height="122" fill="#BFB094"/>
+
+  <!-- معلّمة وطالبان -->
+  <g transform="translate(470,900)">
+    <path d="M-152 0 C-152 -286 -94 -400 0 -400 C94 -400 152 -286 152 0 Z" fill="#26456A"/>
+    <circle cx="0" cy="-476" r="96" fill="#33557C"/>
+    <path d="M-100 -478 a100 100 0 0 1 200 0 v82 q-100 32 -200 0 z" fill="#1E3A5B"/>
+    <path d="M118 -206 q134 28 188 92" stroke="#33557C" stroke-width="52" stroke-linecap="round" fill="none"/>
+  </g>
+  <g transform="translate(930,900)">
+    <path d="M-140 0 C-140 -250 -86 -350 0 -350 C86 -350 140 -250 140 0 Z" fill="#F5F3ED" stroke="#DCD4C3" stroke-width="7"/>
+    <circle cx="0" cy="-422" r="88" fill="#E9E4D8" stroke="#D7CFBD" stroke-width="7"/>
+    <path d="M-92 -424 a92 92 0 0 1 184 0 v56 q-92 24 -184 0 z" fill="#DCD5C5"/>
+  </g>
+  <g transform="translate(1280,900)">
+    <path d="M-136 0 C-136 -238 -84 -334 0 -334 C84 -334 136 -238 136 0 Z" fill="#33607F"/>
+    <circle cx="0" cy="-404" r="86" fill="#42728F"/>
+    <path d="M-90 -406 a90 90 0 0 1 180 0 v70 q-90 28 -180 0 z" fill="#2A5069"/>
+  </g>
+
+  <g>
+    <rect x="660" y="848" width="108" height="52" rx="8" fill="#E8C878"/>
+    <rect x="786" y="848" width="108" height="52" rx="8" fill="#9FC2DE"/>
+    <g transform="translate(1056,832)"><rect width="186" height="68" rx="10" fill="#5C6B7A"/><rect x="11" y="11" width="164" height="46" rx="6" fill="#9FC2DE"/></g>
+  </g>
+</svg>

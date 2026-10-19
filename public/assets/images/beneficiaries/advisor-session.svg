@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="جلسة استشارة مالية فردية — إطار 16:9">
+  <defs>
+    <linearGradient id="vw" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F9F6EF"/><stop offset="100%" stop-color="#EAE3D5"/></linearGradient>
+    <linearGradient id="vcu" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F6F1E6"/><stop offset="100%" stop-color="#E2DACA"/></linearGradient>
+    <linearGradient id="vtb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E7DBC4"/><stop offset="100%" stop-color="#C6B492"/></linearGradient>
+    <radialGradient id="vg" cx="28%" cy="4%" r="86%"><stop offset="0%" stop-color="#FFFAF0" stop-opacity=".95"/><stop offset="100%" stop-color="#FFFAF0" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#vw)"/>
+  <rect width="1920" height="1080" fill="url(#vg)"/>
+
+  <rect x="80" y="80" width="420" height="500" rx="14" fill="#E4EEF6"/>
+  <rect x="80" y="80" width="420" height="500" rx="14" fill="url(#vcu)" opacity=".5"/>
+  <rect x="80" y="80" width="420" height="500" rx="14" fill="none" stroke="#D8CFBD" stroke-width="8"/>
+  <g stroke="#EFE8DA" stroke-width="18" opacity=".8"><path d="M128 80 v500 M184 80 v500 M240 80 v500"/></g>
+
+  <rect x="1310" y="120" width="520" height="340" rx="14" fill="#12324F"/>
+  <g fill="#fff" opacity=".2"><rect x="1356" y="168" width="196" height="16" rx="8"/><rect x="1356" y="202" width="124" height="12" rx="6"/></g>
+  <g fill="#E8C878" opacity=".5">
+    <rect x="1356" y="272" width="56" height="120" rx="7"/><rect x="1430" y="306" width="56" height="86" rx="7"/>
+    <rect x="1504" y="248" width="56" height="144" rx="7"/><rect x="1578" y="288" width="56" height="104" rx="7"/>
+  </g>
+  <path d="M1356 358 L1434 308 L1512 328 L1590 266" stroke="#E8C878" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+
+  <rect x="0" y="900" width="1920" height="62" fill="url(#vtb)"/>
+  <rect x="0" y="962" width="1920" height="118" fill="#BCAE92"/>
+
+  <!-- المستشار يميناً والمستفيدة يساراً، على محور الثلثين -->
+  <g transform="translate(1250,900)">
+    <path d="M-168 0 C-168 -318 -104 -446 0 -446 C104 -446 168 -318 168 0 Z" fill="#F4F2EC" stroke="#DBD3C2" stroke-width="7"/>
+    <circle cx="0" cy="-528" r="106" fill="#E9E4D8" stroke="#D7CFBD" stroke-width="7"/>
+    <path d="M-110 -530 a110 110 0 0 1 220 0 v62 q-110 28 -220 0 z" fill="#DCD5C5"/>
+    <path d="M-144 -226 q-154 32 -216 112" stroke="#EDEAE1" stroke-width="60" stroke-linecap="round" fill="none"/>
+  </g>
+  <g transform="translate(700,908)">
+    <path d="M-164 0 C-164 -306 -102 -430 0 -430 C102 -430 164 -306 164 0 Z" fill="#26456A"/>
+    <circle cx="0" cy="-510" r="104" fill="#33557C"/>
+    <path d="M-108 -512 a108 108 0 0 1 216 0 v90 q-108 34 -216 0 z" fill="#1E3A5B"/>
+  </g>
+
+  <g>
+    <rect x="880" y="848" width="220" height="52" rx="7" fill="#fff" opacity=".95"/>
+    <rect x="904" y="864" width="134" height="8" rx="4" fill="#C9D3DC"/>
+    <rect x="904" y="880" width="94" height="8" rx="4" fill="#DDE3E9"/>
+    <g transform="translate(480,836)"><rect width="170" height="64" rx="10" fill="#5C6B7A"/><rect x="11" y="11" width="148" height="42" rx="6" fill="#9FC2DE"/></g>
+  </g>
+</svg>

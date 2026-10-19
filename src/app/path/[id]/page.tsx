@@ -109,7 +109,7 @@ export default async function PathPage({ params }: { params: Promise<{ id: strin
 
             <SmartImage
               slot={path.kind === "school" ? "classroom" : "workshop"}
-              className="aspect-[4/3] rounded-2xl border border-line"
+              className="aspect-[16/9] rounded-2xl border border-line"
             />
 
             <div className="card p-6">

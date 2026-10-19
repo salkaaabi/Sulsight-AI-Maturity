@@ -51,13 +51,8 @@ export default function HomePage() {
         <div className="shell pt-8">
           <div className="relative overflow-hidden rounded-3xl border border-line bg-white shadow-card">
             <div className="absolute inset-0">
-              <SmartImage
-                slot="heroMain"
-                className="h-full w-full"
-                imgClassName="object-[50%_72%]"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/25 to-white/85" />
+              <SmartImage slot="heroMain" className="h-full w-full" priority />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-white/80" />
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/60 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/20 to-transparent lg:hidden" />
             </div>
@@ -83,7 +78,9 @@ export default function HomePage() {
                     قيّم مستواك المالي
                   </Link>
                 </div>
-                <DemoNote className="mt-8" />
+                <div className="mt-8 inline-flex rounded-lg bg-white/80 px-3 py-1.5 ring-1 ring-line backdrop-blur-sm">
+                  <DemoNote className="!text-navy-800" />
+                </div>
               </div>
               <div className="hidden lg:block" />
             </div>
@@ -162,7 +159,7 @@ export default function HomePage() {
               <div className="px-6">
                 <SmartImage
                   slot="stageSchool"
-                  className="aspect-[16/7] rounded-2xl border border-line"
+                  className="aspect-[16/9] rounded-2xl border border-line"
                 />
               </div>
               <div className="grid grid-cols-2 gap-3 p-6 sm:grid-cols-4">
@@ -204,7 +201,7 @@ export default function HomePage() {
               <div className="px-6">
                 <SmartImage
                   slot="stageAdult"
-                  className="aspect-[16/7] rounded-2xl border border-line"
+                  className="aspect-[16/9] rounded-2xl border border-line"
                 />
               </div>
               <div className="grid grid-cols-2 gap-3 p-6 sm:grid-cols-3">
@@ -507,7 +504,7 @@ export default function HomePage() {
       <section id="advisor" className="section bg-white">
         <div className="shell">
           <div className="overflow-hidden rounded-3xl border border-line bg-sand-50">
-            <div className="grid lg:grid-cols-[1.15fr_1fr]">
+            <div className="grid lg:grid-cols-[1.15fr_1fr] lg:items-center">
               <div className="p-8 sm:p-11">
                 <div className="eyebrow mb-3">استشارة فردية</div>
                 <h2 className="h2">احجز موعداً مع مستشار مالي</h2>
@@ -538,8 +535,8 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="relative min-h-[280px] border-t border-line lg:border-r lg:border-t-0">
-                <SmartImage slot="advisor" className="absolute inset-0 h-full w-full" />
+              <div className="border-t border-line lg:border-r lg:border-t-0">
+                <SmartImage slot="advisor" className="aspect-[16/9] w-full" />
               </div>
             </div>
           </div>

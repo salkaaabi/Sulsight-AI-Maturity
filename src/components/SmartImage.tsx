@@ -15,6 +15,7 @@ export default function SmartImage({
   priority = false,
   showBadge = true,
   overlay,
+  objectPosition,
 }: {
   slot: ImageSlotKey;
   className?: string;
@@ -22,6 +23,8 @@ export default function SmartImage({
   priority?: boolean;
   showBadge?: boolean;
   overlay?: React.ReactNode;
+  /** تجاوز object-position المعرّف للموضع عند الحاجة */
+  objectPosition?: string;
 }) {
   const meta = IMAGE_SLOTS[slot];
   const sources = sourcesFor(meta);
@@ -50,6 +53,7 @@ export default function SmartImage({
         loading="eager"
         decoding="async"
         onError={advance}
+        style={{ objectPosition: objectPosition ?? meta.objectPosition }}
         className={`h-full w-full object-cover ${imgClassName}`}
       />
       {overlay}

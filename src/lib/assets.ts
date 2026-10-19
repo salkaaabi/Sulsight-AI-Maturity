@@ -19,78 +19,136 @@ export type ImageSlot = {
   base: string;
   /** الصورة المؤقتة المرفقة مع المشروع */
   placeholder: string;
-  /** صور رسمية بديلة تُجرَّب قبل الصورة المؤقتة */
-  fallbacks?: string[];
   alt: string;
-  /** نسبة العرض إلى الارتفاع الموصى بها عند رفع الصورة الرسمية */
+  /** نسبة العرض إلى الارتفاع المطلوبة للصورة المصدر */
+  ratio: string;
+  /** أبعاد الموضع الفعلية في الصفحة على شاشة العرض (1920/1440) */
+  slotBox: string;
+  /** نسبة الموضع الفعلية = عرض ÷ ارتفاع الصندوق */
+  slotRatio: number;
+  /** object-position المضبوط لهذا الموضع تحديداً */
+  objectPosition: string;
+  /** قاعدة التكوين: أين يجب أن يقع العنصر البشري داخل الصورة */
+  composition: string;
+  /** نسبة القص المتوقعة بعد ضبط النسبة */
   recommended: string;
 };
 
 const EXT = ["jpg", "png", "webp"] as const;
 
-/** ترتيب المصادر: الصورة الرسمية، ثم بدائل رسمية، ثم الصورة المؤقتة */
+/**
+ * ترتيب المصادر: الصورة الرسمية بامتداداتها، ثم الصورة المؤقتة.
+ * لا تُشارَك صورة واحدة بين موضعين مختلفَي النسبة.
+ */
 export const sourcesFor = (slot: ImageSlot): string[] => [
   ...EXT.map((e) => `${slot.dir}/${slot.base}.${e}`),
-  ...(slot.fallbacks ?? []).flatMap((f) => EXT.map((e) => `${f}.${e}`)),
   slot.placeholder,
 ];
 
 export const IMAGE_SLOTS = {
+  /* ── واجهة الصفحة الرئيسية ──────────────────────────────────
+     الصندوق المقاس: 1166×643 (AR ≈ 1.81). الصورة الرسمية الحالية
+     بانورامية 1916×821 (21:9)، فيبقى قص أفقي للمشهد فقط بلا أشخاص. */
   heroMain: {
     key: "heroMain",
-    label: "صورة الواجهة الرئيسية",
+    label: "واجهة الصفحة الرئيسية (Hero)",
     dir: "/assets/images/fujairah",
     base: "hero-main",
     placeholder: "/assets/images/fujairah/hero-main.svg",
     alt: "ساحل إمارة الفجيرة وجبال الحجر",
-    recommended: "2400×1350 بكسل — أفقية عريضة",
+    ratio: "21:9",
+    slotBox: "1166×643",
+    slotRatio: 1.813,
+    objectPosition: "46% 50%",
+    composition:
+      "الثلث الأيمن هادئ بصرياً (سماء وبحر مفتوح) لأن العنوان والأزرار فوقه. الحصن والجبال في اليسار والوسط. بلا أشخاص في المقدمة.",
+    recommended: "2560×1440 (16:9) لإلغاء القص — أو 21:9 بقص أفقي للمشهد",
   },
+
+  /* ── بطاقة المرحلة الأولى ───────────────────────────────────
+     الصندوق 16:9 ليطابق الصور الفوتوغرافية الحالية تماماً. */
   stageSchool: {
     key: "stageSchool",
-    label: "صورة طلبة المدارس",
+    label: "بطاقة المرحلة الأولى — طلبة المدارس",
     dir: "/assets/images/students",
     base: "students-school",
     placeholder: "/assets/images/students/students-school.svg",
-    alt: "طلبة من مدارس الفجيرة",
-    recommended: "1600×700 بكسل — أفقية",
+    alt: "طلبة وطالبات من مدارس الفجيرة في نشاط تعلّم مالي",
+    ratio: "16:9",
+    slotBox: "520×293",
+    slotRatio: 1.778,
+    objectPosition: "50% 42%",
+    composition:
+      "المجموعة في الشريط الأوسط أفقياً (20%–80%) والوجوه في النصف العلوي من الإطار.",
+    recommended: "1920×1080 — بلا قص",
   },
+
+  /* ── بطاقة المرحلة الثانية ─────────────────────────────────── */
   stageAdult: {
     key: "stageAdult",
-    label: "صورة المستفيدين من الفئات المختلفة",
+    label: "بطاقة المرحلة الثانية — الجامعة وما بعدها",
     dir: "/assets/images/beneficiaries",
     base: "adults-city",
     placeholder: "/assets/images/beneficiaries/adults-city.svg",
-    alt: "مستفيدون من فئات المرحلة الثانية في الفجيرة",
-    recommended: "1600×700 بكسل — أفقية",
+    alt: "مستفيدون بالغون من فئات المرحلة الثانية في بيئة إماراتية معاصرة",
+    ratio: "16:9",
+    slotBox: "520×293",
+    slotRatio: 1.778,
+    objectPosition: "50% 40%",
+    composition:
+      "مجموعة صغيرة في الوسط أفقياً، الوجوه في النصف العلوي، خلفية عمرانية هادئة على الأطراف.",
+    recommended: "1920×1080 — بلا قص",
   },
+
+  /* ── صفحات المسارات المدرسية ──────────────────────────────── */
   classroom: {
     key: "classroom",
-    label: "صورة بيئة التعلّم المدرسية",
+    label: "صفحات المسارات المدرسية",
     dir: "/assets/images/students",
     base: "classroom",
-    fallbacks: ["/assets/images/students/students-school"],
-    placeholder: "/assets/images/students/students-school.svg",
-    alt: "بيئة تعلّم مدرسية",
-    recommended: "1200×900 بكسل",
+    placeholder: "/assets/images/students/classroom.svg",
+    alt: "بيئة تعلّم مدرسية حديثة",
+    ratio: "16:9",
+    slotBox: "440×248",
+    slotRatio: 1.778,
+    objectPosition: "50% 42%",
+    composition: "الوجوه في النصف العلوي من الإطار، الطاولة في الثلث السفلي.",
+    recommended: "1920×1080 — بلا قص",
   },
+
+  /* ── صفحات مسارات المرحلة الثانية ─────────────────────────── */
   workshop: {
     key: "workshop",
-    label: "صورة ورشة تدريب حضورية",
+    label: "صفحات مسارات المرحلة الثانية",
     dir: "/assets/images/beneficiaries",
     base: "training-workshop",
     placeholder: "/assets/images/beneficiaries/training-workshop.svg",
     alt: "ورشة تدريب مالية حضورية",
-    recommended: "1200×900 بكسل",
+    ratio: "16:9",
+    slotBox: "440×248",
+    slotRatio: 1.778,
+    objectPosition: "50% 45%",
+    composition:
+      "مدرّب بجانب شاشة ومجموعة صغيرة حول طاولة. الوجوه في النصف العلوي.",
+    recommended: "1920×1080 — بلا قص (الصورة الرسمية لم تُرفع بعد)",
   },
+
+  /* ── الاستشارة المالية: الرئيسية و/advisor بنفس النسبة ───────
+     الموضعان 16:9 معاً، فاستخدام الصورة نفسها لا يسبب أي اختلاف قص. */
   advisor: {
     key: "advisor",
-    label: "صورة جلسة استشارة مالية",
+    label: "الاستشارة المالية (الرئيسية وصفحة /advisor)",
     dir: "/assets/images/beneficiaries",
     base: "advisor-session",
-    fallbacks: ["/assets/images/beneficiaries/training-workshop"],
-    placeholder: "/assets/images/beneficiaries/training-workshop.svg",
+    placeholder: "/assets/images/beneficiaries/advisor-session.svg",
     alt: "جلسة استشارة مع مستشار مالي",
-    recommended: "1200×900 بكسل",
+    ratio: "16:9",
+    slotBox: "541×304 · 499×281",
+    slotRatio: 1.778,
+    objectPosition: "50% 45%",
+    composition:
+      "مستشار ومستفيد على طرفَي طاولة، الوجوه على محور الثلثين، الطاولة في الثلث السفلي.",
+    recommended: "1920×1080 — بلا قص",
   },
 } satisfies Record<string, ImageSlot>;
 
